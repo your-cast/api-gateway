@@ -1,15 +1,6 @@
-# Payments LCY API gateway for Raiffeisen Go
+# Your Casr API gateway
 
-API for Raiffeisen Go micro-frontends Service is a Java (Spring Boot) application.
-
-## Technical details
-
-- [Source code](https://gitlab.avalaunch.aval/applications/payments-lcy/lcy-api-gateway-service) in GitLab.
-- Jenkins [CI pipeline](https://jenkins.avalaunch.aval/job/payments-lcy/job/lcy-api-gateway-ci/).
-
-# Architect diagram
-
-![Architectural diagram](./docs/lcy-api-gateway.png)
+Your Casr API gateway is a Java (Spring Boot) application for proxy routes via microservices.
 
 # Setup
 
@@ -19,7 +10,7 @@ Use the package manager [maven](https://maven.apache.org) to build an artifact a
 maven mvn clean install
 ```
 
-Service should be accessible on [localhost:8080](localhost:8080).
+Service should be accessible on [localhost:8081](localhost:8081).
 
 # Libraries
 
