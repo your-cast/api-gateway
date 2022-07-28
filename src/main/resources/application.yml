@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: your-cast-api-gateway
+  main:
+    banner-mode: off
+
+## Logging setting ##
+logging:
+  level:
+    root: INFO # root level logging
+  pattern:
+    dateformat: "dd.MM.yyyy HH:mm:ss.SSS" # Set dateformat for logging
+
+services:
+  url:
