@@ -1,6 +1,6 @@
-# Your Casr API gateway
+# Your Cast API gateway
 
-Your Casr API gateway is a Java (Spring Boot) application for proxy routes via microservices.
+Your Cast API gateway is a Java (Spring Boot) application for proxy routes via microservices.
 
 # Setup
 
