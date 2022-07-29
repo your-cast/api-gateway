@@ -1,4 +1,4 @@
-package ua.aval.lcyapigateway.config.metric;
+package com.yourcast.apigateway.config.metric;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Value;

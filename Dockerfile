@@ -1,13 +1,16 @@
-FROM openjdk:13.0.2-slim as builder
+FROM maven:latest as builder
 
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-RUN java -Djarmode=layertools -jar app.jar extract
+MAINTAINER Dmytro Kuchura
 
-FROM openjdk:13.0.2-slim
-VOLUME /tmp
-COPY --from=builder dependencies/ ./
-COPY --from=builder snapshot-dependencies/ ./
-COPY --from=builder spring-boot-loader/ ./
-COPY --from=builder application/ ./
-ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
+COPY pom.xml /build/
+COPY src /build/src/
+WORKDIR /build/
+
+RUN mvn install -DskipTests
+
+FROM openjdk:17.0.2-slim
+
+WORKDIR /app
+COPY --from=builder /build/target/your-cast-api-gateway-0.0.1.jar /app/
+
+ENTRYPOINT ["java", "-jar", "your-cast-api-gateway-0.0.1.jar"]

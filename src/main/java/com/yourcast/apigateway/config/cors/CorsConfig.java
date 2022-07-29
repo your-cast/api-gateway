@@ -1,4 +1,4 @@
-package ua.aval.lcyapigateway.config.cors;
+package com.yourcast.apigateway.config.cors;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

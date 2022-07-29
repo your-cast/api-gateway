@@ -1,4 +1,4 @@
-package ua.aval.lcyapigateway.config.logging;
+package com.yourcast.apigateway.config.logging;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

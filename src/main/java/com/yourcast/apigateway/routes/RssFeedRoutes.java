@@ -1,4 +1,4 @@
-package ua.aval.lcyapigateway.routes;
+package com.yourcast.apigateway.routes;
 
 import lombok.AllArgsConstructor;
 
@@ -8,7 +8,7 @@ import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import ua.aval.lcyapigateway.config.RoutesProperties;
+import com.yourcast.apigateway.config.RoutesProperties;
 
 @Configuration
 @AllArgsConstructor

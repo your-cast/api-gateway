@@ -1,4 +1,4 @@
-package ua.aval.lcyapigateway.config;
+package com.yourcast.apigateway.config;
 
 import lombok.Getter;
 import lombok.Setter;
