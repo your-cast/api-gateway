@@ -11,6 +11,6 @@ RUN mvn install -DskipTests
 FROM openjdk:17.0.2-slim
 
 WORKDIR /app
-COPY --from=builder /build/target/your-cast-api-gateway-0.0.1.jar /app/
+COPY --from=builder /build/target/your-cast-api-gateway.jar /app/
 
-ENTRYPOINT ["java", "-jar", "your-cast-api-gateway-0.0.1.jar"]
+ENTRYPOINT ["java", "-jar", "your-cast-api-gateway.jar"]
