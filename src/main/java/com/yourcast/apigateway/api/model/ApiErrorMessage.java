@@ -7,7 +7,7 @@ import com.yourcast.apigateway.model.dto.Payload;
 
 @Getter
 @Setter
-public class ApiErrorMessage  implements Payload {
+public class ApiErrorMessage implements Payload {
     private String code;
     private String message;
 }

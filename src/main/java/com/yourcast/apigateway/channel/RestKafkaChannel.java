@@ -30,10 +30,10 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Component
 @RequiredArgsConstructor
 public class RestKafkaChannel {
-    @Value("${spring.kafka.consumer.topics.message-bus-request}")
+    @Value("${spring.kafka.producer.topics.message-bus-request}")
     private String topic;
 
-    @Value("${spring.kafka.producer.topics.message-bus-response}")
+    @Value("${spring.kafka.consumer.topics.message-bus-response}")
     private String listenerTopic;
 
     @Value("${spring.application.consumer-threads}")

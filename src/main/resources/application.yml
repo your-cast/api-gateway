@@ -20,10 +20,10 @@ spring:
       group-id: ${spring.application.name}
       auto-offset-reset: earliest
       topics:
-        message-bus-request:
+        message-bus-response:
     producer:
       topics:
-        message-bus-response:
+        message-bus-request:
 
 ## Logging setting ##
 logging:
