@@ -1,13 +1,10 @@
 package com.yourcast.apigateway.channel;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
@@ -84,21 +81,19 @@ public class RestKafkaChannel {
                     .sourceIdentity(listenerTopic)
                     .build();
 
-            ListenableFuture<SendResult<String, Transport>> future = kafkaTemplate.send(topic, token, request);
-
-            future.addCallback(new ListenableFutureCallback<>() {
+            kafkaTemplate.send(topic, token, request).addCallback(new ListenableFutureCallback<>() {
                 @Override
                 public void onSuccess(SendResult<String, Transport> result) {
                     LOG.info("RestKafkaChannel.sendRequest: successfully sent: " + request);
                 }
 
                 @Override
-                public void onFailure(Throwable ex) {
-                    LOG.error("RestKafkaChannel.sendRequest: failed to send. Msg: " + ex.getMessage(), ex);
+                public void onFailure(Throwable throwable) {
+                    LOG.error("RestKafkaChannel.sendRequest: failed to send. Msg: " + throwable.getMessage(), throwable);
                 }
             });
-        } catch (Exception ex) {
-            LOG.error("RestKafkaChannel.sendRequest: " + ex.getMessage(), ex);
+        } catch (Exception exception) {
+            LOG.error("RestKafkaChannel.sendRequest: " + exception.getMessage(), exception);
         }
     }
 }

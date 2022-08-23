@@ -6,6 +6,10 @@ server:
   port: 9999
 
 spring:
+  json:
+    add:
+      type:
+        headers: false
   application:
     name: your-cast-api-gateway
     consumer-threads: 2
