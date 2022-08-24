@@ -36,7 +36,7 @@ public class RssFeedController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error")})
     @GetMapping
     public DeferredResult<ResponseEntity<GatewayApiResponse<RssFeedResponse>>> getRssFeed(@PathVariable("token") String token) {
-        LOG.debug("RssFeedController.getRssFeed: token( " + token + " )");
+        LOG.info("RssFeedController.getRssFeed: token( " + token + " )");
         String key = ControllerUtils.getUUID();
 
         DeferredResult<ResponseEntity<GatewayApiResponse<RssFeedResponse>>> result = apiGatewayControllerHelper.createResult("GetRssFeedByToken", key);
