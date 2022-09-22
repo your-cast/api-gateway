@@ -1,11 +1,33 @@
+service:
+  name: ${spring.application.name}
+  version: 0.1.0
+
 server:
   port: 9999
 
 spring:
+  json:
+    add:
+      type:
+        headers: false
   application:
     name: your-cast-api-gateway
+    consumer-threads: 2
+    deferred-result-ttl: 15000
   main:
     banner-mode: off
+
+  ## Kafka ##
+  kafka:
+    bootstrap-servers:
+    consumer:
+      group-id: ${spring.application.name}
+      auto-offset-reset: earliest
+      topics:
+        message-bus-response:
+    producer:
+      topics:
+        message-bus-request:
 
 ## Logging setting ##
 logging:
@@ -13,6 +35,3 @@ logging:
     root: INFO # root level logging
   pattern:
     dateformat: "dd.MM.yyyy HH:mm:ss.SSS" # Set dateformat for logging
-
-services:
-  feed: "http://127.0.0.1:8081"
