@@ -35,3 +35,6 @@ logging:
     root: INFO # root level logging
   pattern:
     dateformat: "dd.MM.yyyy HH:mm:ss.SSS" # Set dateformat for logging
+
+services:
+  feed: "http://localhost:8081"
